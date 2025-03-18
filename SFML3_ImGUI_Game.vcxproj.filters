@@ -39,6 +39,9 @@
     <Filter Include="src\core">
       <UniqueIdentifier>{9f732931-3a1c-4021-a3ca-f1b94844f8ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\app">
+      <UniqueIdentifier>{b3777f21-9e90-4f2d-b323-1ea9c680c278}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="external\ImGui\ImGui_SFML3\imgui-SFML.cpp">
@@ -57,8 +60,14 @@
       <Filter>external\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="src\core\CidWindow.cpp">
+    <ClCompile Include="src\app\CidWindow.cpp">
       <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\CastleCrashers.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\app\Application.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,13 +98,22 @@
     <ClInclude Include="external\ImGui\ImGui_SFML3\imgui-SFML_export.h">
       <Filter>src_headers\external\ImGui\ImGui_SFML3</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\CidWindow.h">
+    <ClInclude Include="src\app\CidWindow.h">
       <Filter>src_headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\CastleCrashers.h">
+      <Filter>src_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\app\Application.h">
+      <Filter>src_headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Assets\Fonts\Crusty.ttf">
       <Filter>Assets\Fonts</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

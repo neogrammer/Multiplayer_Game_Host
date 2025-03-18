@@ -6,7 +6,7 @@
 #include <SFML/Network.hpp>
 
 #include <iostream>
-#include "src/core/CidWindow.h"
+#include "src/app/CidWindow.h"
 
 /////////////////////////
 // 

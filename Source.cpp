@@ -77,10 +77,10 @@ int main(int argc, char* argv[])
     while (running && window.isOpen())
     {
 
-        std::string nameP2 = "";
-        uint32_t idP2 = 2;
-        float xPosP2 = 100.f;
-        float yPosP2 = 100.f;
+        std::string nameP2 = "Host";
+        uint32_t idP2 = 1;
+        float xPosP2 = host.xpos;
+        float yPosP2 = host.ypos;
         sf::Packet packet;
         status = socket.receive(packet); // blocking    
         if (status != sf::TcpSocket::Status::Done)
@@ -150,7 +150,7 @@ int main(int argc, char* argv[])
             }
             sf::Time dt = deltaClock.restart();
             
-            game.update(dt);
+            game.update(dt, &host, &guest);
            
 
 

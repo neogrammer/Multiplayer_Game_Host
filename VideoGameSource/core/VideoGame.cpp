@@ -1,12 +1,15 @@
 #include "videogame.h"
 
-bool VideoGame::update(sf::Time dt_)
+bool VideoGame::update(sf::Time dt_, Player* host_, Player* guest_)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
+	host = host_;
+	guest = guest_;
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
 	{
 		host->xpos += 300.f * dt_.asSeconds();
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
 	{
 		host->xpos -= 300.f * dt_.asSeconds();
 	}

@@ -6,7 +6,8 @@
 #include <SFML/Network.hpp>
 
 #include <iostream>
-#include "src/core/CidWindow.h"
+#include <core/CidWindow.h>
+#include <core/VideoGame.h>
 
 /////////////////////////
 // 
@@ -14,14 +15,8 @@
 // 
 // ////////////////////
 // Host program
-struct Player
-{
-    std::string name;
-    uint32_t id;
-    float xpos;
-    float ypos;
-};
 
+#include <entities/Player.h>
 
 int main(int argc, char* argv[])
 {
@@ -69,6 +64,9 @@ int main(int argc, char* argv[])
     // change the title of the window
     window.setTitle("SFML window");
 
+
+    // create the game
+    VideoGame game{&window, &guest, &host};
 
 
 
@@ -148,18 +146,27 @@ int main(int argc, char* argv[])
                     if (keyPressed->scancode == sf::Keyboard::Scancode::Escape)
                         window.close();
                 }
+                // game.input(event);
             }
+            sf::Time dt = deltaClock.restart();
+            
+            game.update(dt);
+           
 
 
             soWhat = ImGui::SFML::UpdateFontTexture(); // important call: updates font texture
-            ImGui::SFML::Update(window, deltaClock.restart());
+            ImGui::SFML::Update(window, dt);
 
             ImGui::Begin("Hello, world!");
             ImGui::Button("Look at this pretty button");
             ImGui::End();
 
+
             window.clear(sf::Color(47, 147, 247, 255));
 
+            //window.setView(game.mainView);
+            game.render();
+            //window.setView(window.getDefaultView()
 
             ImGui::SFML::Render(window);
             window.display();

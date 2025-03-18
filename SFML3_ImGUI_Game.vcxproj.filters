@@ -39,6 +39,9 @@
     <Filter Include="src\core">
       <UniqueIdentifier>{9f732931-3a1c-4021-a3ca-f1b94844f8ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src_headers\entities">
+      <UniqueIdentifier>{b809c52b-c62d-40fe-a198-a9f0e2d92da1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="external\ImGui\ImGui_SFML3\imgui-SFML.cpp">
@@ -57,7 +60,10 @@
       <Filter>external\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="src\core\CidWindow.cpp">
+    <ClCompile Include="VideoGameSource\core\VideoGame.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\CidWindow.cpp">
       <Filter>src\core</Filter>
     </ClCompile>
   </ItemGroup>
@@ -89,8 +95,14 @@
     <ClInclude Include="external\ImGui\ImGui_SFML3\imgui-SFML_export.h">
       <Filter>src_headers\external\ImGui\ImGui_SFML3</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\CidWindow.h">
+    <ClInclude Include="VideoGameSource\core\VideoGame.h">
       <Filter>src_headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\CidWindow.h">
+      <Filter>src_headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>src_headers\entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

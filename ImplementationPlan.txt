@@ -1,0 +1,14 @@
+// Get network connecting two programs locally   OK
+// set one program as a host that waits for connection and one as a client to join a session by ip  OK
+// Have both programs send its data to the other and take in the others data and update it on their side before doing any game related stuff  OK
+// after data transfers, then run a game loop via a VideoGame class  OK
+//  Get networking to work and send data back and forth over a network successfully  OK
+// Use data grabbed every frame to use for this frame's calculations, update and render the scene using rectangle shapes as the players for now  OK
+// Set up GameStateManager, GameState, SplashState, TitleState, MenuState, PausedState, PlayState, OverState, MapState    TODO
+// For PlayState, it contains a pointer to a Stage, which is the current Stage the PlayState uses for calculations, IntroStage, Level1Stage,
+// Stages consist of a parallaxing map in the background the players in the collide layer, and the foreground in front of the players, and the players go right to left
+// while going right to left, moments are encountered, a BattleMoment starts when an enemy gets close and it plays more like chrono trigger, for you and your partner
+//  attacks have a time clock, when times up, you forfeit your turn, when you forfeit three in a row, your character is booted from party
+//  you can change a setting to be afk to not get booted, nor be involved in the battle moments.  This mode prevents the other player to progress in story moments, they must wait or boot the player 
+//                  or leave the instance without penalty if the player afk  set a time afk, and the other player agrees to it, if they surpass that time, then they can be
+//                   booted without penalty to the booter

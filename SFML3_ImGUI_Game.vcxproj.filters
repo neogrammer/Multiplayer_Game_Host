@@ -66,6 +66,27 @@
     <ClCompile Include="VideoGameSource\core\CidWindow.cpp">
       <Filter>src\core</Filter>
     </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameStates\SplashState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameStates\TitleState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameStates\PlayState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameStates\OverState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameStates\MenuState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameStates\PausedState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\ImGui\ImGui_SFML3\imgui-SFML.h">
@@ -101,13 +122,40 @@
     <ClInclude Include="VideoGameSource\core\CidWindow.h">
       <Filter>src_headers\core</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>src_headers\entities</Filter>
+    <ClInclude Include="VideoGameSource\core\GameState.h">
+      <Filter>src_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\entities\Player.h">
+      <Filter>src_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\GameStates\SplashState.h">
+      <Filter>src_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\GameStates\TitleState.h">
+      <Filter>src_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\GameStates\PlayState.h">
+      <Filter>src_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\GameStates\OverState.h">
+      <Filter>src_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\GameStates\MenuState.h">
+      <Filter>src_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\GameStates\PausedState.h">
+      <Filter>src_headers</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\ViewLayers.h">
+      <Filter>src_headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Assets\Fonts\Crusty.ttf">
       <Filter>Assets\Fonts</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ImplementationPlan.txt" />
   </ItemGroup>
 </Project>

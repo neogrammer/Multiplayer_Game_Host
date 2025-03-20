@@ -13,6 +13,8 @@ bool VideoGame::update(sf::Time dt_, Player* host_, Player* guest_)
 	{
 		host->xpos -= 300.f * dt_.asSeconds();
 	}
+
+	gStateMgr.Update(dt_, host_, guest_);
 	return true;
 }
 
@@ -34,6 +36,8 @@ bool VideoGame::animate()
 
 bool VideoGame::render()
 {
+
+	gStateMgr.Render(*cwnd);
 	sf::RectangleShape shp1;
 	shp1.setSize({ 100.f, 150.f });
 	shp1.setPosition({ host->xpos, host->ypos });
@@ -57,6 +61,7 @@ VideoGame::VideoGame(CidWindow* cwnd_, Player* guest_, Player* host_)
 	, guest{ guest_ }
 	, host{host_}
 {
+	
 }
 
 
@@ -64,4 +69,10 @@ void VideoGame::Initialize(CidWindow& cwnd_, Player& guest_)
 {
 	cwnd = &cwnd_;
 	guest = &guest_;
+}
+
+bool VideoGame::input()
+{
+	gStateMgr.Input();
+	return true;
 }

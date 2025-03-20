@@ -9,6 +9,8 @@
 #include <core/CidWindow.h>
 #include <core/VideoGame.h>
 
+#include <entities/Player.h>
+
 /////////////////////////
 // 
 // H O S T
@@ -16,7 +18,6 @@
 // ////////////////////
 // Host program
 
-#include <entities/Player.h>
 
 int main(int argc, char* argv[])
 {

@@ -42,6 +42,15 @@
     <Filter Include="src\core\game_states">
       <UniqueIdentifier>{fb0a7390-f952-45d0-8bb8-4b011956e575}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\core\resources">
+      <UniqueIdentifier>{3cdef577-40f7-49de-9a4b-a85432e86f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_headers\core\resources">
+      <UniqueIdentifier>{7c46cd1a-ad62-4669-8d66-daa939807115}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_headers\core\resources\tpl">
+      <UniqueIdentifier>{f7af727e-a983-4893-a9ee-39de6836e653}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="external\ImGui\ImGui_SFML3\imgui-SFML.cpp">
@@ -64,6 +73,15 @@
       <Filter>src\core</Filter>
     </ClCompile>
     <ClCompile Include="VideoGameSource\core\CidWindow.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameState.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameStateManager.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\Globals.cpp">
       <Filter>src\core</Filter>
     </ClCompile>
     <ClCompile Include="VideoGameSource\core\game_states\LoadState.cpp">
@@ -90,14 +108,8 @@
     <ClCompile Include="VideoGameSource\core\game_states\TitleState.cpp">
       <Filter>src\core\game_states</Filter>
     </ClCompile>
-    <ClCompile Include="VideoGameSource\core\GameState.cpp">
-      <Filter>src\core</Filter>
-    </ClCompile>
-    <ClCompile Include="VideoGameSource\core\GameStateManager.cpp">
-      <Filter>src\core</Filter>
-    </ClCompile>
-    <ClCompile Include="VideoGameSource\core\Globals.cpp">
-      <Filter>src\core</Filter>
+    <ClCompile Include="VideoGameSource\core\resources\Cfg.cpp">
+      <Filter>src\core\resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +149,18 @@
     <ClInclude Include="VideoGameSource\entities\Player.h">
       <Filter>src_headers\entities</Filter>
     </ClInclude>
+    <ClInclude Include="VideoGameSource\core\GameState.h">
+      <Filter>src_headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\GameStateManager.h">
+      <Filter>src_headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\Globals.h">
+      <Filter>src_headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\StateIDs.h">
+      <Filter>src_headers\core</Filter>
+    </ClInclude>
     <ClInclude Include="VideoGameSource\core\game_states\LoadState.h">
       <Filter>src_headers\core\game_states</Filter>
     </ClInclude>
@@ -164,17 +188,14 @@
     <ClInclude Include="VideoGameSource\core\game_states\TitleState.h">
       <Filter>src_headers\core\game_states</Filter>
     </ClInclude>
-    <ClInclude Include="VideoGameSource\core\GameState.h">
-      <Filter>src_headers\core</Filter>
+    <ClInclude Include="VideoGameSource\core\resources\Cfg.h">
+      <Filter>src_headers\core\resources</Filter>
     </ClInclude>
-    <ClInclude Include="VideoGameSource\core\GameStateManager.h">
-      <Filter>src_headers\core</Filter>
+    <ClInclude Include="VideoGameSource\core\resources\Maps.h">
+      <Filter>src_headers\core\resources</Filter>
     </ClInclude>
-    <ClInclude Include="VideoGameSource\core\Globals.h">
-      <Filter>src_headers\core</Filter>
-    </ClInclude>
-    <ClInclude Include="VideoGameSource\core\StateIDs.h">
-      <Filter>src_headers\core</Filter>
+    <ClInclude Include="VideoGameSource\core\resources\ResourceManager.h">
+      <Filter>src_headers\core\resources</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -184,5 +205,10 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="ImplementationPlan.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="VideoGameSource\core\resources\tpl\ResourceManager.tpl">
+      <Filter>src_headers\core\resources\tpl</Filter>
+    </None>
   </ItemGroup>
 </Project>

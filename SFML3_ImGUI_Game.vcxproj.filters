@@ -51,6 +51,18 @@
     <Filter Include="src_headers\core\resources\tpl">
       <UniqueIdentifier>{f7af727e-a983-4893-a9ee-39de6836e653}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Assets\Textures">
+      <UniqueIdentifier>{54bab21d-209b-4357-87f6-c2430b395beb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Backgrounds">
+      <UniqueIdentifier>{5b9ebdc7-7423-4c2a-80dd-84cf1347c706}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Backgrounds\SplashScreen">
+      <UniqueIdentifier>{7153cf89-9277-4f40-8ace-ba2b0020a26d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Backgrounds\TitleScreen">
+      <UniqueIdentifier>{50fc37a0-f68b-4651-8c11-9253ba72cde2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="external\ImGui\ImGui_SFML3\imgui-SFML.cpp">
@@ -210,5 +222,13 @@
     <None Include="VideoGameSource\core\resources\tpl\ResourceManager.tpl">
       <Filter>src_headers\core\resources\tpl</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Textures\Backgrounds\TitleScreen\TitleBG.jpg">
+      <Filter>Assets\Textures\Backgrounds\TitleScreen</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Backgrounds\SplashScreen\SplashScreen.jpg">
+      <Filter>Assets\Textures\Backgrounds\SplashScreen</Filter>
+    </Image>
   </ItemGroup>
 </Project>

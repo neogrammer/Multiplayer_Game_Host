@@ -10,6 +10,9 @@
 #include <core/VideoGame.h>
 
 #include <entities/Player.h>
+#include <core/resources/Cfg.h>
+#include <core/Globals.h>
+
 
 /////////////////////////
 // 
@@ -21,6 +24,10 @@
 
 int main(int argc, char* argv[])
 {
+
+    Cfg::Initialize();
+
+
     Player host{ "Player1",1,100.f,100.f };
     Player guest{ "Guest",2,400.f,100.f };
 
@@ -46,7 +53,7 @@ int main(int argc, char* argv[])
 
     CidWindow window;
     std::string str = "SFML3 GAME";
-    window.create(800, 600, str.c_str(), sf::State::Windowed);
+    window.create((int)glb::WINW, (int)glb::WINH, "SFML3 Game", sf::State::Windowed);
 
 
     bool soWhat = ImGui::SFML::Init(window, false);

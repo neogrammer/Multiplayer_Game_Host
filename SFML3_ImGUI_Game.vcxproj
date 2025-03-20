@@ -206,6 +206,10 @@
   <ItemGroup>
     <None Include="VideoGameSource\core\resources\tpl\ResourceManager.tpl" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Textures\Backgrounds\SplashScreen\SplashScreen.jpg" />
+    <Image Include="Assets\Textures\Backgrounds\TitleScreen\TitleBG.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

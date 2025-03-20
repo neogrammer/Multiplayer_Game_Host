@@ -1,7 +1,12 @@
 #pragma once
 #include "../GameState.h"
+#include <core/resources/Cfg.h>
 
-class SplashState : public GameState {
+
+class SplashState : public GameState 
+{
+    Cfg::Textures bgSpr;
+
 public:
     SplashState();
 

@@ -1,7 +1,10 @@
 #pragma once
 #include "../GameState.h"
+#include <core/resources/Cfg.h>
 
 class TitleState : public GameState {
+    Cfg::Textures bgSpr;
+
 public:
     TitleState();
     ~TitleState() override {}

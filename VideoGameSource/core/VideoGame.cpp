@@ -1,9 +1,8 @@
 #include "videogame.h"
 
-bool VideoGame::update(sf::Time dt_, Player* host_, Player* guest_)
+bool VideoGame::update(sf::Time dt_)
 {
-	host = host_;
-	guest = guest_;
+
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
 	{
@@ -14,7 +13,7 @@ bool VideoGame::update(sf::Time dt_, Player* host_, Player* guest_)
 		host->xpos -= 300.f * dt_.asSeconds();
 	}
 
-	gStateMgr.Update(dt_, host_, guest_);
+	gStateMgr.Update(dt_);
 	return true;
 }
 
@@ -56,19 +55,22 @@ bool VideoGame::render()
 }
 
 
-VideoGame::VideoGame(CidWindow* cwnd_, Player* guest_, Player* host_)
+VideoGame::VideoGame( Player* host_, Player* guest_, CidWindow* cwnd_)
 	: cwnd{cwnd_}
 	, guest{ guest_ }
 	, host{host_}
+	, gStateMgr{host_, guest_, cwnd_}
 {
 	
 }
 
 
-void VideoGame::Initialize(CidWindow& cwnd_, Player& guest_)
+void VideoGame::Initialize(Player* host_, Player* guest_, CidWindow* cwnd_)
 {
-	cwnd = &cwnd_;
-	guest = &guest_;
+	cwnd = cwnd_;
+	host = host_;
+	guest = guest_;
+	gStateMgr = GameStateManager{ host_,guest_,cwnd_ };
 }
 
 bool VideoGame::input()

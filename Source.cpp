@@ -74,7 +74,7 @@ int main(int argc, char* argv[])
 
 
     // create the game
-    VideoGame game{&window, &guest, &host};
+    VideoGame game{&host, &guest, &window};
 
 
 
@@ -154,11 +154,12 @@ int main(int argc, char* argv[])
                     if (keyPressed->scancode == sf::Keyboard::Scancode::Escape)
                         window.close();
                 }
-                // game.input(event);
             }
+
             sf::Time dt = deltaClock.restart();
-            
-            game.update(dt, &host, &guest);
+            game.input();
+
+            game.update(dt);
            
 
 

@@ -10,12 +10,14 @@ class VideoGame
 public:
 	CidWindow* cwnd;
 	Player* guest, * host;
-	GameStateManager gStateMgr{};
-	VideoGame(CidWindow* cwnd_, Player* host_, Player* guest_);
-
-	void Initialize(CidWindow& cwnd_, Player& guest_);
+	GameStateManager gStateMgr;
+	VideoGame(Player* host_, Player* guest_, CidWindow* cwnd_);
+	VideoGame(VideoGame&&) = delete;
+	VideoGame& operator=(VideoGame&&) = delete;
+	VideoGame() = delete;
+	void Initialize( Player* host_, Player* guest_, CidWindow* cwnd_);
 	bool input();
-	bool update(sf::Time dt_, Player* host_, Player* guest_);
+	bool update(sf::Time dt_);
 	bool handleCollisions();
 	bool adjustPositions();
 	bool animate();

@@ -191,6 +191,7 @@
     <ClInclude Include="VideoGameSource\core\game_states\TitleState.h" />
     <ClInclude Include="VideoGameSource\core\Globals.h" />
     <ClInclude Include="VideoGameSource\core\resources\Cfg.h" />
+    <ClInclude Include="VideoGameSource\core\resources\EnumMacros.h" />
     <ClInclude Include="VideoGameSource\core\resources\Maps.h" />
     <ClInclude Include="VideoGameSource\core\resources\ResourceManager.h" />
     <ClInclude Include="VideoGameSource\core\StateIDs.h" />

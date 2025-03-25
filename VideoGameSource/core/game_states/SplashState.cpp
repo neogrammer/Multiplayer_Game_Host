@@ -1,6 +1,7 @@
 #include "SplashState.h"
 #include <SFML/Graphics.hpp>
 #include "../Globals.h"
+#include <core/IO/InputTarget.h>
 
 SplashState::SplashState()
     : GameState{}
@@ -52,7 +53,7 @@ SplashState& SplashState::operator=(const SplashState& o)
 
 void SplashState::Input() {
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Y))
     {
         stateInWait = StateID::Title;
         needsToSwitchOut = true;

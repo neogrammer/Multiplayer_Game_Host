@@ -15,7 +15,7 @@ class PlayerSprite : public sf::Sprite, public InputTarget
 	int playerSpeed{ 350 };
 	sf::Time _dt{ sf::seconds(0.f) };
 	sf::Vector2f _vel{ 0.f,0.f };
-	float _frameDelay{ 1.4f };
+	float _frameDelay{ 0.33f };
 	sf::Time frameTimeElapsed{ sf::seconds(0.f) };
 	std::string currAnim{ "Idle" };
 	std::string currDir{ "Right" };

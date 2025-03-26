@@ -74,30 +74,34 @@ void PlayerSprite::update(sf::Time dt_)
 	{
 		if (_movingLeft)
 		{
-			if (_vel.x == 0.f)
+			if (currAnim != "Walk" || currDir != "Left")
 			{
 				currentIndex = 0;
 				currAnim = "Walk";
 				currDir = "Left";
+				_frameDelay = 0.0627f;
 			}
-			_vel.x = (float) - playerSpeed;
+			_vel.x = -1 * (float)playerSpeed;
 			
 		}
 		else if (_movingRight)
 		{
-			if (_vel.x == 0.f)
+			if (currAnim != "Walk" || currDir != "Right")
 			{
 				currentIndex = 0;
 				currAnim = "Walk";
 				currDir = "Right";
+				_frameDelay = 0.0627f;
+
 			}
 			_vel.x = (float)playerSpeed;
 		}
 		else
 		{
-			if (_vel.x != 0.f)
+			if (currAnim != "Idle")
 			{
 				currentIndex = 0;
+				_frameDelay = 0.33f;
 				currAnim = "Idle";
 			}
 			_vel.x = 0.f;

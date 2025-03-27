@@ -217,6 +217,10 @@
   <ItemGroup>
     <Image Include="Assets\Textures\Backgrounds\SplashScreen\SplashScreen.jpg" />
     <Image Include="Assets\Textures\Backgrounds\TitleScreen\TitleBG.jpg" />
+    <Image Include="Assets\Textures\Client_player\Idle_KG_2.png" />
+    <Image Include="Assets\Textures\Client_player\Walking_KG_2.png" />
+    <Image Include="Assets\Textures\Host_player\Idle_KG_2.png" />
+    <Image Include="Assets\Textures\Host_player\Walking_KG_2.png" />
     <Image Include="Assets\Textures\Knight_player\Idle_KG_2.png" />
     <Image Include="Assets\Textures\Knight_player\Walking_KG_2.png" />
   </ItemGroup>

@@ -85,10 +85,11 @@ int main(int argc, char* argv[])
     while (running && window.isOpen())
     {
 
-        std::string nameP2 = "Host";
-        uint32_t idP2 = 1;
-        float xPosP2 = host.xpos;
-        float yPosP2 = host.ypos;
+        std::string nameP2;
+        uint32_t idP2;
+        float xPosP2;
+        float yPosP2;
+        float deltaTime;
         sf::Packet packet;
         status = socket.receive(packet); // blocking    
         if (status != sf::TcpSocket::Status::Done)
@@ -105,12 +106,16 @@ int main(int argc, char* argv[])
                 {
                     if (packet >> yPosP2)
                     {
-                        // only got here if all variables are now filled correctly
-                        error = false;
-                        guest.name = nameP2;
-                        guest.id = idP2;
-                        guest.xpos = xPosP2;
-                        guest.ypos = yPosP2;
+                        if (packet >> deltaTime)
+                        {
+                            // only got here if all variables are now filled correctly
+                            error = false;
+                            guest.name = nameP2;
+                            guest.id = idP2;
+                            guest.xpos = xPosP2;
+                            guest.ypos = yPosP2;
+                            guest.dt = deltaTime;
+                        }
                     }
                 }
             }
@@ -125,9 +130,12 @@ int main(int argc, char* argv[])
         uint32_t idP1 = host.id;
         float xPosP1 = host.xpos;
         float yPosP1 = host.ypos;
+        sf::Time dt = deltaClock.restart();
+        // deltatime gets updated and sent to guest
+        float dtTime = dt.asSeconds();
         {
             sf::Packet packet2;
-            packet2 << nameP1 << idP1 << xPosP1 << yPosP1;
+            packet2 << nameP1 << idP1 << xPosP1 << yPosP1 << dtTime;
             status = socket.send(packet2);  //blocking, maybe turn off blocking and use a selector?
             if (status != sf::TcpSocket::Status::Done)
             {
@@ -137,7 +145,7 @@ int main(int argc, char* argv[])
         }
 
         // now that both are sent to each other and updated , run a game frame and then start back over reading and writing every frame.
-        std::cout << guest.name << guest.id << guest.xpos << guest.ypos << std::endl;
+        std::cout << guest.name << ": " << guest.id << ": " << guest.xpos << ": " << guest.ypos << ": " << dtTime << std::endl;
 
         if (running)
         {
@@ -156,7 +164,7 @@ int main(int argc, char* argv[])
                 }
             }
 
-            sf::Time dt = deltaClock.restart();
+  
             game.input();
 
             game.update(dt);
